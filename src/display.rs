@@ -35,9 +35,9 @@ impl<T: Debug + Serialize> Debug for Json<T> {
 }
 
 #[inline]
-fn write_serialized<'other, T: Serialize, const IS_PRETTY: bool>(
+fn write_serialized<T: Serialize, const IS_PRETTY: bool>(
     fmt: &mut Formatter<'_>,
-    to_serialize: &'other T,
+    to_serialize: &T,
 ) -> fmt::Result {
     struct IoBridge<'a, 'b>(&'a mut Formatter<'b>);
 

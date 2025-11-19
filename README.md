@@ -1,9 +1,9 @@
-# dyson (DisplaY as jSON)
+# dison (DIsplay as jSON)
 
-dyson is a tiny crate for zero-copy JSON Display implementation for any type that implements `Serialize`.
+dison is a tiny crate for zero-copy JSON Display implementation for any type that implements `Serialize`.
 
 ```rust
-use dyson::Json;
+use dison::Json;
 
 #[derive(Serialize)]
 struct Object {
@@ -35,7 +35,7 @@ println!("{json_pretty}");
 This crate uses `serde_json` internally and therefore shall always match whatever `serde_json::to_string` produces, with the added benefit of not having to allocate a temporary `String` for common use cases such as printing a JSON-formatted string to `stdout` or within `format!`.
 
 ```rust
-use dyson::Json;
+use dison::Json;
 
 fn send_message(message: &Message) -> Result {
    query("SELECT from send_message($1::jsonb)", Json(message))
